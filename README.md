@@ -1,26 +1,61 @@
 # ember-cli-deploy-ssh-execute
 
-This README outlines the details of collaborating on this Ember addon.
+This plugin can be used to execute commands on a SSH server after a successful
+deploy. It will trigger the defined commands in the
+[`didActivate` hook](http://ember-cli-deploy.com/docs/v1.0.x/pipeline-hooks/).
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-deploy-ssh-execute`
-* `npm install`
+```
+ember install ember-cli-deploy-ssh-execute
+```
 
-## Running
+## Configuration
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Add commands in your `config/deploy.js`:
 
-## Running Tests
+```js
+module.exports = function(deployTarget) {
+  var ENV = {
+    // ...
+    'ssh-execute': {
+      host: 'example.org',
+      port: 22,
+      username: 'deploy',
+      remoteDir: '/some/path/on/the/server',
+      commands: [
+        './my-command.sh foo bar',
+      ],
+    },
+    // ...
+  };
+};
+```
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+The following configuration options are available:
 
-## Building
+Required:
+ - host
+ - username
+ - commands
 
-* `ember build`
+Optional:
+ - port
+ - remoteDir
+ - privateKey
+ - passphrase
+ - agent
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+## Contributing
+
+ - Add the necessary tests for the change
+ - Implement the change
+ - Run the tests via
+
+```
+npm test
+```
+
+## License
+
+MIT
