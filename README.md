@@ -1,5 +1,7 @@
 # ember-cli-deploy-ssh-execute
 
+[![Build Status](https://travis-ci.org/felixkiss/ember-cli-deploy-ssh-execute.svg?branch=master)](https://travis-ci.org/felixkiss/ember-cli-deploy-ssh-execute)
+
 This plugin can be used to execute commands on a SSH server after a successful
 deploy. It will trigger the defined commands in the
 [`didActivate` hook](http://ember-cli-deploy.com/docs/v1.0.x/pipeline-hooks/).
