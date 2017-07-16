@@ -63,7 +63,7 @@ describe('ember-cli-deploy-ssh-execute', function() {
     });
   });
 
-  describe('#didDeploy', function() {
+  describe('#didActivate', function() {
     it('delegates to ssh-executor for every command', function() {
       context.config['ember-cli-deploy-ssh-execute'] = {
         host: 'example.org',
@@ -77,7 +77,7 @@ describe('ember-cli-deploy-ssh-execute', function() {
       plugin.beforeHook(context);
       plugin.configure();
 
-      var promise = plugin.didDeploy(context);
+      var promise = plugin.didActivate(context);
 
       return expect(promise).to.be.fulfilled
         .then(function() {
@@ -99,7 +99,7 @@ describe('ember-cli-deploy-ssh-execute', function() {
       plugin.beforeHook(context);
       plugin.configure();
 
-      var promise = plugin.didDeploy(context);
+      var promise = plugin.didActivate(context);
 
       return expect(promise).to.be.fulfilled
         .then(function() {
