@@ -24,7 +24,7 @@
   "dependencies": {
     "ember-cli-babel": "^6.0.0",
     "ember-cli-deploy-plugin": "^0.2.9",
-    "ssh2": "^0.5.5"
+    "ssh2": "^0.8.9"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
